@@ -1,0 +1,12 @@
+services:
+  app:
+    image: node:lts
+    user: node
+    working_dir: /home/node/${APP_NAME}
+    volumes:
+      - .:/home/node/${APP_NAME}
+      - ~/.ssh:/home/node/.ssh
+    ports:
+      - 3000:3000
+      - 5173:5173
+    command: ["tail","-f","/dev/null"]
