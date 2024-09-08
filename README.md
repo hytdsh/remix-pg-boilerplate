@@ -28,3 +28,5 @@ https://remix.run/docs/en/main/start/quickstart に従い `package.json` に `"t
 `npx remix vite:dev`
 `npx remix vite:build && npx remix-serve build/server/index.js`
 が動くようになりました。
+
+`compose.yml` から簡単に呼ぶために `package.json` に script を追加した。
