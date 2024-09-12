@@ -3,6 +3,7 @@
 # Remix https://remix.run/docs/en/main/tutorials/jokes
 .env
 .cache/
+styles/
 build/
 public/build/
 # Maybe something is needed here for Drizzle ORM? like prisma/dev.db?

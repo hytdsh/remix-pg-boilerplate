@@ -1,6 +1,8 @@
-import { defineConfig } from 'unocss'
+import { defineConfig, presetUno } from 'unocss'
 
 export default defineConfig({
   // Your UnoCSS configurations
-  rules: [],
+  presets: [
+    presetUno(),
+  ],
 })

@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/node'
+import type { LinksFunction } from '@remix-run/node'
 import {
   Links,
   Meta,
@@ -6,15 +6,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
-import unocss from '../uno.css?url'
 
-export const meta: MetaFunction = () => [
-  { title: 'unocss remix' },
-]
+import reset from '@unocss/reset/tailwind.css?url';
+import uno from '~/styles/uno.css?url'
 
 export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: unocss },
-]
+  { rel: "stylesheet", href: reset },
+  { rel: "stylesheet", href: uno },
+];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -31,9 +30,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
 
 export default function App() {
-  return <Outlet />
+  return <Outlet />;
 }

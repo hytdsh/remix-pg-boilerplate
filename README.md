@@ -39,6 +39,14 @@ npx remix vite:build && npx remix-serve build/server/index.js
 
 1. `npm i -D unocss` しました。
 1. `uno.config.ts` を作り `vite.config.ts` を調整しました。
-1. `root.tsx` を更新して、`app/routes/_index.tsx` と `app/routes/about.tsx` を作成しました。これには https://github.com/unocss/unocss/tree/main/examples/remix を参照しています。
+1. `root.tsx` を更新して、`app/routes/_index.tsx` を作成しました。これには https://github.com/unocss/unocss/tree/main/examples/remix を参照しています。
 
-ここまでやって `http://localhost:5173/` と `http://localhost:5173/about` が表示されるようになりました。
+ここまでやって `http://localhost:5173/` が表示されるようになりましたが、CSSが当たっているように見えないので更に調整しました。
+
+これには再度 https://github.com/unocss/unocss/tree/main/examples/remix を参照しています。
+
+1. `npm i -D vite-tsconfig-paths` しました。
+1. `vite.config.ts` を調整して `vite-tsconfig.paths` を使うようにしました。
+1. `uno.config.ts` を調整して使用するプリセットを明示しました。
+
+ここまでやってCSSが適用されるようになりました。
