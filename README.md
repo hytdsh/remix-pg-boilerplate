@@ -50,3 +50,7 @@ npx remix vite:build && npx remix-serve build/server/index.js
 1. `uno.config.ts` を調整して使用するプリセットを明示しました。
 
 ここまでやってCSSが適用されるようになりました。
+
+## UnoCSS の修正
+
+UnoCSSのViteプラグインを導入した。
