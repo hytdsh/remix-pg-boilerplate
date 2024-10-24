@@ -5,8 +5,9 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "generate:css": "unocss './app/**/*.{js,ts,jsx,tsx}' -o ./app/styles/uno.css",
-    "dev": "npx remix vite:dev --host",
+    "dev": "remix vite:dev --host",
+    "build": "remix vite:build",
+    "start": "remix-serve build/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

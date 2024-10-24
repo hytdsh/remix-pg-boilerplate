@@ -9,4 +9,4 @@ services:
     ports:
       - 3000:3000
       - 5173:5173
-    command: ["npm", "run", "dev",]
+    entrypoint: ["/home/node/${APP_NAME}/docker-entrypoint.sh"]

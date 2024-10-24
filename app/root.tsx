@@ -8,11 +8,10 @@ import {
 } from '@remix-run/react'
 
 import reset from '@unocss/reset/tailwind.css?url';
-import uno from '~/styles/uno.css?url'
+import 'virtual:uno.css'
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: reset },
-  { rel: "stylesheet", href: uno },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
