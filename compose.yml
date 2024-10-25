@@ -1,8 +1,14 @@
 services:
   app:
     image: node:lts
+    restart: always
+    security_opt:
+      - no-new-privileges:true
     user: node
     working_dir: /home/node/${APP_NAME}
+    environment:
+      TZ: Asia/Tokyo
+      DATABASE_URL: postgresql://appuser:${PGPASS}@db/appdb
     volumes:
       - .:/home/node/${APP_NAME}
       - ~/.ssh:/home/node/.ssh
@@ -10,3 +16,18 @@ services:
       - 3000:3000
       - 5173:5173
     entrypoint: ["/home/node/${APP_NAME}/docker-entrypoint.sh"]
+  db:
+    image: postgres:16.3-bookworm
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      TZ: Asia/Tokyo
+      POSTGRES_PASSWORD: ${PGPASS}
+      POSTGRES_USER: appuser
+      POSTGRES_DB: appdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
