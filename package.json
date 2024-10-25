@@ -6,6 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "remix vite:dev --host",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:seed": "tsx ./app/drizzle/seed.ts",
     "build": "remix vite:build",
     "start": "remix-serve build/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
